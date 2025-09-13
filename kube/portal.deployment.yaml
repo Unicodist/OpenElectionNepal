@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: OpenElectionBooth
+  labels:
+    app: OpenElectionBooth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: OpenElectionBooth
+  template:
+    metadata:
+      name: OpenElection
+      labels:
+        app: OpenElection
+    spec:
+      containers:
+        - name: OpenElection
+          image: nginx
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+              protocol: TCP
+      restartPolicy: Always
+      

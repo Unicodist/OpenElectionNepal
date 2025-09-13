@@ -1,0 +1,9 @@
+.nepal-logo{
+  width: 100px;
+  height: 100px;
+  background-image: url('../assets/favicon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 10px;
+}

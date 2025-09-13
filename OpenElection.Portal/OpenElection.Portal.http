@@ -1,0 +1,6 @@
+@OpenElection.Portal_HostAddress = http://localhost:5101
+
+GET {{OpenElection.Portal_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
