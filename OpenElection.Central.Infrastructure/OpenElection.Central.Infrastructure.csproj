@@ -10,4 +10,9 @@
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\OpenElection.Central.Domain\OpenElection.Central.Domain.csproj" />
+      <ProjectReference Include="..\OpenElection.Microservice\OpenElection.Microservice.csproj" />
+    </ItemGroup>
+
 </Project>

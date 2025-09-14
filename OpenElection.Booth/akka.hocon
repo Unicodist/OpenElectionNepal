@@ -1,0 +1,11 @@
+akka.actor.deployment {
+    /vote {
+        router = round-robin-group
+        routees.paths = ["/user/vote"]
+        cluster {
+            enabled = on
+            use-role = Central
+            allow-local-routees = off
+        }
+    }
+}

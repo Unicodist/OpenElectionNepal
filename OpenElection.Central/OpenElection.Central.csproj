@@ -12,6 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\OpenElection.Microservice\OpenElection.Microservice.csproj" />
+      <ProjectReference Include="..\OpenElection.Central.Infrastructure\OpenElection.Central.Infrastructure.csproj" />
     </ItemGroup>
 </Project>

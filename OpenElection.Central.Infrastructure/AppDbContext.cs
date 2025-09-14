@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace OpenElection.Central.Data;
+namespace OpenElection.Central.Infrastructure;
 
 public class AppDbContext: DbContext
 {

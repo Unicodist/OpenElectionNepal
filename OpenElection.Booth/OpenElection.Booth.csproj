@@ -15,4 +15,9 @@
         <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="9.0.9" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\OpenElection.Microservice\OpenElection.Microservice.csproj" />
+      <ProjectReference Include="openelection.booth.esproj" />
+    </ItemGroup>
+
 </Project>
