@@ -9,15 +9,20 @@ public static class MappingHelper
     {
         var ledger = new VoteLedger()
         {
-            BoothId = dto.BoothId,
-            CandidateId = dto.CandidateId,
             ConstituencyId = dto.ConstituencyId,
             DigitalSignature = dto.DigitalSignature,
-            ElectionId = dto.ElectionId,
-            PreviousVoteHash = dto.PreviousVoteHash,
-            VoteHash = Guid.NewGuid().ToString(),
             VoterHash = dto.VoterHash
         };
         return ledger;
+    }
+
+    public static CurrentBoothState ToEntity(this BoothStateUpdateDto stateDto)
+    {
+        var state = new CurrentBoothState()
+        {
+            BoothId = stateDto.BoothId,
+            BoothState = stateDto.BoothState
+        };
+        return state;
     }
 }

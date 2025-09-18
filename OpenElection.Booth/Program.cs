@@ -31,4 +31,5 @@ return;
 void ActorStarter(ActorSystem system, IActorRegistry registry, IDependencyResolver resolver)
 {
     _ = system.CreateRemoteActor("vote");
+    _ = system.CreateRemoteActor("booth-coordinator");
 }

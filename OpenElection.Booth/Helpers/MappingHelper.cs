@@ -14,6 +14,7 @@ public static class MappingHelper
             DistrictId = appSettings.DistrictId,
             PartyId = appSettings.CandidateId,
             VoterGuid = model.VoterId,
+            CandidateId = model.CandidateId,
             BoothSignature = appSettings.BoothSignature
         };
         return message;

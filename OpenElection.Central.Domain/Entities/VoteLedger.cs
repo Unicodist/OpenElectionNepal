@@ -13,11 +13,6 @@ public class VoteLedger
     public string VoterHash { get; set; }
 
     /// <summary>
-    /// Identifier for the election (e.g., federal, provincial, or local).
-    /// </summary>
-    public Guid ElectionId { get; set; }
-
-    /// <summary>
     /// Identifier for the constituency (e.g., Kathmandu-1).
     /// </summary>
     public string ConstituencyId { get; set; }
@@ -45,6 +40,6 @@ public class VoteLedger
     /// <summary>
     /// Identifier for the booth where the vote was cast (linked to OpenElectionBooth).
     /// </summary>
-    public string BoothId { get; set; }
+    public Guid BoothId { get; set; }
 
 }

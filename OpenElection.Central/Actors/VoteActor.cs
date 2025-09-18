@@ -1,11 +1,11 @@
 using OpenElection.Central.Domain.Services;
-using OpenElection.Central.Infrastructure.Helpers;
+using OpenElection.Central.Helpers;
 using OpenElection.Microservice;
 using OpenElection.Microservice.Messages;
 
-namespace OpenElection.Central.Infrastructure.Actors;
+namespace OpenElection.Central.Actors;
 
-public class VoteActor: BaseActor
+public class VoteActor: ReceiveActorBase
 {
     private readonly VoteService _voteService;
 

@@ -8,4 +8,13 @@ akka.actor.deployment {
             allow-local-routees = off
         }
     }
+    /booth-coordinator {
+        router = round-robin-group
+        routees.paths = ["/user/booth-coordinator"]
+        cluster {
+            enabled = on
+            use-role = Central
+            allow-local-routees = off
+        }
+    }
 }

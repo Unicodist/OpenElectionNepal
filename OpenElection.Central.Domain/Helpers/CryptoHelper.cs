@@ -7,14 +7,13 @@ namespace OpenElection.Central.Domain.Helpers;
 public class CryptoHelper
 {
     /// <summary>
-    /// Appends VoteLedger values to create a hash
+    /// Appends VoteLedger values and creates a new hash
     /// </summary>
     public static string EncryptVoteLedger(VoteLedger vote)
     {
         var dataToHash =
             $"{vote.Id}" +
             $"{vote.VoterHash}" +
-            $"{vote.ElectionId}" +
             $"{vote.ConstituencyId}" +
             $"{vote.CandidateId}" +
             $"{vote.PreviousVoteHash}" +
