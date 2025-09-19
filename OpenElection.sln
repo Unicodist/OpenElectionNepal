@@ -9,15 +9,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenElection.Central", "Ope
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenElection.Portal", "OpenElection.Portal\OpenElection.Portal.csproj", "{FF6F9306-47C8-4613-A7FB-0BA0AB379498}"
 EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "open-election", "open-election\open-election.esproj", "{377D7111-D3A9-49D1-99DA-FAB1F66A708C}"
-EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "openelection.booth", "openelection.booth\openelection.booth.esproj", "{68079B6E-B5A7-4EEB-BE9D-F874F8687B8D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenElection.Central.Infrastructure", "OpenElection.Central.Infrastructure\OpenElection.Central.Infrastructure.csproj", "{B682161D-96E1-4584-872D-1409CD7E0B21}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenElection.Booth", "OpenElection.Booth\OpenElection.Booth.csproj", "{C42CBC71-AEA8-4139-8DAF-88A15F605BD2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenElection.Central.Domain", "OpenElection.Central.Domain\OpenElection.Central.Domain.csproj", "{1AC40199-9A6F-4430-8044-2E608EBC60D0}"
+EndProject
+Project("{54a90642-561a-4bb1-a94e-469adee60c69}") = "openelection.booth.web", "openelection.booth.web\openelection.booth.web.esproj", "{BA25BBD4-111B-4709-8010-47A8D9D981F4}"
+EndProject
+Project("{54a90642-561a-4bb1-a94e-469adee60c69}") = "openelection.portal.web", "openelection.portal.web\openelection.portal.web.esproj", "{1580DDB9-F791-4D1C-8C4C-08268C529CA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,14 +40,6 @@ Global
 		{FF6F9306-47C8-4613-A7FB-0BA0AB379498}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF6F9306-47C8-4613-A7FB-0BA0AB379498}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF6F9306-47C8-4613-A7FB-0BA0AB379498}.Release|Any CPU.Build.0 = Release|Any CPU
-		{377D7111-D3A9-49D1-99DA-FAB1F66A708C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{377D7111-D3A9-49D1-99DA-FAB1F66A708C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{377D7111-D3A9-49D1-99DA-FAB1F66A708C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{377D7111-D3A9-49D1-99DA-FAB1F66A708C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{68079B6E-B5A7-4EEB-BE9D-F874F8687B8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{68079B6E-B5A7-4EEB-BE9D-F874F8687B8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68079B6E-B5A7-4EEB-BE9D-F874F8687B8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{68079B6E-B5A7-4EEB-BE9D-F874F8687B8D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B682161D-96E1-4584-872D-1409CD7E0B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B682161D-96E1-4584-872D-1409CD7E0B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B682161D-96E1-4584-872D-1409CD7E0B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -60,6 +52,14 @@ Global
 		{1AC40199-9A6F-4430-8044-2E608EBC60D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AC40199-9A6F-4430-8044-2E608EBC60D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AC40199-9A6F-4430-8044-2E608EBC60D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA25BBD4-111B-4709-8010-47A8D9D981F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA25BBD4-111B-4709-8010-47A8D9D981F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA25BBD4-111B-4709-8010-47A8D9D981F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA25BBD4-111B-4709-8010-47A8D9D981F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1580DDB9-F791-4D1C-8C4C-08268C529CA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1580DDB9-F791-4D1C-8C4C-08268C529CA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1580DDB9-F791-4D1C-8C4C-08268C529CA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1580DDB9-F791-4D1C-8C4C-08268C529CA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection

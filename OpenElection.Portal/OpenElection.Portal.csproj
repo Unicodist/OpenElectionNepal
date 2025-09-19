@@ -4,6 +4,10 @@
         <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        
+        <SpaRoot>../openelection.portal.web</SpaRoot>
+        <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
+        <SpaProxyServerUrl>https://localhost:49495</SpaProxyServerUrl>
     </PropertyGroup>
 
     <ItemGroup>
@@ -12,8 +16,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\open-election\open-election.esproj" />
       <ProjectReference Include="..\OpenElection.Microservice\OpenElection.Microservice.csproj" />
+      <ProjectReference Include="..\openelection.portal.web\openelection.portal.web.esproj" />
     </ItemGroup>
 
 </Project>

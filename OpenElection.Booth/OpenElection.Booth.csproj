@@ -5,7 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         
-        <SpaRoot>../openelection.booth</SpaRoot>
+        <SpaRoot>../openelection.booth.web</SpaRoot>
         <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
         <SpaProxyServerUrl>https://localhost:49494</SpaProxyServerUrl>
     </PropertyGroup>
@@ -16,8 +16,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\openelection.booth.web\openelection.booth.web.esproj" />
       <ProjectReference Include="..\OpenElection.Microservice\OpenElection.Microservice.csproj" />
-      <ProjectReference Include="openelection.booth.esproj" />
     </ItemGroup>
 
 </Project>
