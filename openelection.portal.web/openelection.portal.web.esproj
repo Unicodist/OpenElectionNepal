@@ -1,5 +1,6 @@
 <Project>
   <Sdk Name="Microsoft.VisualStudio.JavaScript.SDK" Version="1.0.3804879" />
+
   <PropertyGroup>
     <StartupCommand>npm start</StartupCommand>
 
