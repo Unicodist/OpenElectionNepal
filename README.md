@@ -35,7 +35,83 @@ In this documentation, we will explore Project architecture and a brief document
     - PostgreSQL (Database, At this point I can only see the Central service using it.)
 
 ### How to run the project?
-- Remember there are multiple projects in the solution.
-- Use an IDE or browser with cli to projects, "OpenElection.Central", "OpenElection.Booth", "OpenElection.Portal"
-- Run individual .NET projects
+> Order: PostgreSQL → Central (.NET) → Booth (.NET, multiple instances) → Web Portals (Angular)
+
+#### 0) Prerequisites
+- .NET 7 SDK or later
+- Node.js 18+ and npm (or yarn)
+- Angular CLI (recommended): npm i -g @angular/cli
+- Local PostgreSQL instance
+
+#### 1) Clone & Restore
+```
+git clone https://github.com/Unicodist/OpenElectionNepal.git
+cd OpenElectionNepal
+dotnet restore OpenElection.sln
+dotnet build OpenElection.sln -c Debug
+```
+
+#### 2) Database (PostgreSQL)
+```
+CREATE DATABASE openelection;
+```
+
+- Add connection string in `OpenElection.Central/appsettings.Development.json` under `ConnectionStrings`  
+- Or set environment variable (example):  
+```
+ConnectionStrings__Default=Host=localhost;Port=5432;Database=openelection;Username=postgres;Password=postgres
+```
+
+Optional EF Core migration:
+```
+dotnet tool install --global dotnet-ef
+dotnet ef database update --project OpenElection.Central
+```
+
+#### 3) Run Central
+```
+dotnet run --project OpenElection.Central
+```
+
+#### 4) Run Booth (multiple instances possible)
+```
+dotnet run --project OpenElection.Booth --urls http://localhost:5101
+dotnet run --project OpenElection.Booth --urls http://localhost:5102
+```
+
+#### 5) Run Web Portals
+Portal (results, ledger download):
+```
+cd openelection.portal.web
+npm install
+npm start
+```
+
+Booth Web (voting UI):
+```
+cd ../openelection.booth.web
+npm install
+npm start
+```
+
+#### 6) Kubernetes (optional)
+```
+kubectl apply -f kube/
+```
+
+#### 7) Troubleshooting
+- DB errors → check connection string  
+- Port conflicts → change --urls (Booth) or --port (Angular)  
+- Package errors → verify SDK/Node versions, use `npm ci`
+
+
+
+
+
+
+
+
+
+
+
 
