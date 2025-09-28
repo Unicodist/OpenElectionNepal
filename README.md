@@ -45,7 +45,7 @@ In this documentation, we will explore Project architecture and a brief document
 
 #### 1) Clone & Restore
 ```
-git clone https://github.com/LylaB/OpenElectionNepal.git
+git clone https://github.com/Unicodist/OpenElectionNepal.git
 cd OpenElectionNepal
 dotnet restore OpenElection.sln
 dotnet build OpenElection.sln -c Debug
