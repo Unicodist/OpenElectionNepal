@@ -12,14 +12,4 @@ public static class MappingHelper
             message.BoothSignature, message.VoterGuid);
         return dto;
     }
-
-    public static BoothStateUpdateDto ToDto(this BoothUpdateMessage message)
-    {
-        if (!Guid.TryParse(message.BoothId, out var boothId) ||
-            !BaseEnum.TryParse<BoothState>(message.BoothState, out var boothState) || boothState == null)
-            throw new Exception("Invalid booth state");
-        var dto = new BoothStateUpdateDto(boothId, boothState);
-        return dto;
-
-    }
 }

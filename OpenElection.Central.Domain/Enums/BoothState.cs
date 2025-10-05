@@ -15,5 +15,4 @@ public class BoothState: BaseEnum
     public static readonly BoothState Closed = new("CLOSED", "Closed");
     public static readonly BoothState Finalized = new("FINALIZED", "Finalized");
     public static readonly BoothState Voided = new("VOIDED", "Voided");
-    
 }

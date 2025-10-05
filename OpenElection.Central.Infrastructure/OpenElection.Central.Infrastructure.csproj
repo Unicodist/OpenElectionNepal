@@ -15,8 +15,4 @@
       <ProjectReference Include="..\OpenElection.Microservice\OpenElection.Microservice.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Actors\" />
-    </ItemGroup>
-
 </Project>
