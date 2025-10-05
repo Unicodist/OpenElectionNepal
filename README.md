@@ -51,35 +51,30 @@ dotnet restore OpenElection.sln
 dotnet build OpenElection.sln -c Debug
 ```
 
-#### 2) Database (PostgreSQL)
-```
-CREATE DATABASE openelection;
-```
+#### 2) First few steps:
+- Copy **appsettings.json** and paste as **appsettings.Development.json**
+- **appsettings.Development.json** is gitignored so you can use any db credentials there without chaning **appsettings.json** itself
+- Modify **DbInfo** section in configuration file to specify your PostgreSQL instance
 
-- Add connection string in `OpenElection.Central/appsettings.Development.json` under `ConnectionStrings`  
-- Or set environment variable (example):  
-```
-ConnectionStrings__Default=Host=localhost;Port=5432;Database=openelection;Username=postgres;Password=postgres
-```
-
-Optional EF Core migration:
+#### 3) EF Core migration:
 ```
 dotnet tool install --global dotnet-ef
-dotnet ef database update --project OpenElection.Central
+cd OpenElection.Central.Infrastructure
+dotnet ef database update --startup-project ../OpenElection.Central
 ```
 
-#### 3) Run Central
+#### 4) Run Central
 ```
 dotnet run --project OpenElection.Central
 ```
 
-#### 4) Run Booth (multiple instances possible)
+#### 5) Run Booth (multiple instances possible)
 ```
 dotnet run --project OpenElection.Booth --urls http://localhost:5101
 dotnet run --project OpenElection.Booth --urls http://localhost:5102
 ```
 
-#### 5) Run Web Portals
+#### 6) Run Web Portals
 Portal (results, ledger download):
 ```
 cd openelection.portal.web
@@ -88,20 +83,22 @@ npm start
 ```
 
 Booth Web (voting UI):
+
+This will also auto launch if you run *OpenElection.Booth* Project
 ```
 cd ../openelection.booth.web
 npm install
 npm start
 ```
 
-#### 6) Kubernetes (optional)
+#### 7) Kubernetes (optional, needs more work)
 ```
 kubectl apply -f kube/
 ```
 
-#### 7) Troubleshooting
-- DB errors → check connection string  
-- Port conflicts → change --urls (Booth) or --port (Angular)  
+#### 8) Troubleshooting
+- DB errors → check *DbInfo* Section in appsettings file
+- Port conflicts → change --urls (Booth) or --port (Angular)
 - Package errors → verify SDK/Node versions, use `npm ci`
 
 
