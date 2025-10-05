@@ -15,14 +15,4 @@ public static class MappingHelper
         };
         return ledger;
     }
-
-    public static CurrentBoothState ToEntity(this BoothStateUpdateDto stateDto)
-    {
-        var state = new CurrentBoothState()
-        {
-            BoothId = stateDto.BoothId,
-            BoothState = stateDto.BoothState
-        };
-        return state;
-    }
 }

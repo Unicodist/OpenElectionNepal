@@ -5,4 +5,5 @@ namespace OpenElection.Central.Domain.Repositories;
 public interface IBoothRepository
 {
     Task<Booth?> GetByIdAsync(Guid id);
+    Task UpdateAsync(Booth booth);
 }
