@@ -1,13 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         
         <SpaRoot>../openelection.booth.web</SpaRoot>
         <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
         <SpaProxyServerUrl>https://localhost:49494</SpaProxyServerUrl>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
     <ItemGroup>
@@ -18,6 +19,20 @@
     <ItemGroup>
       <ProjectReference Include="..\openelection.booth.web\openelection.booth.web.esproj" />
       <ProjectReference Include="..\OpenElection.Microservice\OpenElection.Microservice.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="publish\web.config" />
+      <_ContentIncludedByDefault Remove="publish\appsettings.json" />
+      <_ContentIncludedByDefault Remove="publish\OpenElection.Booth.deps.json" />
+      <_ContentIncludedByDefault Remove="publish\OpenElection.Booth.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="publish\OpenElection.Booth.staticwebassets.endpoints.json" />
     </ItemGroup>
 
 </Project>
