@@ -8,9 +8,9 @@ namespace OpenElection.Booth.Controllers;
 public class VerificationController: ControllerBase
 {
     [HttpPost]
-    public IActionResult Verify(string hash)
+    public IActionResult Verify(VerificationRequestModel model)
     {
-        var successModel = new VerificationSuccessResponseModel("V123456", "John Doe", hash, true);
+        var successModel = new VerificationSuccessResponseModel("V123456", "John Doe", model.Hash, true);
         var failureModel = new VerificationFailureResponseModel("Invalid identity hash.");
 
         var random = new Random();
