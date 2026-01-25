@@ -6,7 +6,7 @@ using OpenElection.Microservice.Messages;
 
 namespace OpenElection.Central.Actors;
 
-public class BoothCoordinatorActor(ElectionService electionService) : ReceiveActorBase
+public class BoothCoordinatorActor(IServiceScopeFactory scopeFactory) : ReceiveActorBase
 {
     protected override void PreRestart(Exception reason, object message)
     {
@@ -16,6 +16,8 @@ public class BoothCoordinatorActor(ElectionService electionService) : ReceiveAct
 
     private async Task HandleBoothUpdateMessage(BoothUpdateMessage message)
     {
+        using var scope = scopeFactory.CreateScope();
+        var electionService = scope.ServiceProvider.GetRequiredService<ElectionService>();
         if (!Guid.TryParse(message.BoothId, out var id))
             throw new AppBaseException("Couldn't parse the supposed guid value into a Guid instance");
         if (BaseEnum.TryParse<BoothState>(message.BoothState, out var state))

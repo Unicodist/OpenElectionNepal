@@ -12,6 +12,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\OpenElection.Central.Domain\OpenElection.Central.Domain.csproj" />
+      <ProjectReference Include="..\OpenElection.HealthChecks\OpenElection.HealthChecks.csproj" />
       <ProjectReference Include="..\OpenElection.Microservice\OpenElection.Microservice.csproj" />
     </ItemGroup>
 

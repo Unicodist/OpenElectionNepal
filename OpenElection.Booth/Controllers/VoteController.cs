@@ -11,10 +11,13 @@ namespace OpenElection.Booth.Controllers;
 public class VoteController(AppSettings appSettings, ActorSystem system): ControllerBase
 {
     private readonly ActorSelection _voteActor = system.ActorSelection("/user/vote");
+    [HttpGet]
     public async Task<IActionResult> Vote(VoteRequestApiModel model)
     {
         var dto = model.ToMessage(appSettings);
         var response = await _voteActor.Ask<VoteResponseMessage>(dto);
         return Ok(response);
     }
+    
+    
 }
