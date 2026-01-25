@@ -4,6 +4,7 @@ using Akka.Hosting;
 using OpenElection.Central;
 using OpenElection.Central.Actors;
 using OpenElection.Central.Infrastructure;
+using OpenElection.HealthChecks;
 using OpenElection.Microservice;
 
 var builder = Host.CreateApplicationBuilder(args);
@@ -15,7 +16,8 @@ builder.Services.RegisterWithCentralSystem(centralOptions, ActorStarter);
 
 builder.Services.Configure<DbInfo>(builder.Configuration.GetSection("DbInfo"));
 builder.Services.AddDbContext<AppDbContext>();
-builder.Services.AddHostedService<Worker>();
+builder.Services.AddAppHealthChecks();
+builder.Services.AddHostedService<HealthCheckBackgroundService>();
 
 var host = builder.Build();
 host.Run();

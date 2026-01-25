@@ -1,15 +1,15 @@
 <Project>
-  <Sdk Name="Microsoft.VisualStudio.JavaScript.SDK" Version="1.0.3804879" />
+  <Sdk Name="Microsoft.VisualStudio.JavaScript.SDK" Version="1.0.3804879"/>
   <PropertyGroup>
-    <StartupCommand>npm start</StartupCommand>
+    <StartupCommand>npm run dev</StartupCommand>
 
     <ShouldRunBuildScript>false</ShouldRunBuildScript>
 
-    <BuildOutputFolder>$(MSBuildProjectDirectory)\dist\openelection.booth.web\browser\</BuildOutputFolder>
+    <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
   </PropertyGroup>
 
   <ItemGroup>
-    <TypeScriptConfiguration Remove="**\jsconfig.json" />
-    <TypeScriptConfiguration Remove="**\tsconfig.json" />
+    <TypeScriptConfiguration Remove="**\jsconfig.json"/>
+    <TypeScriptConfiguration Remove="**\tsconfig.json"/>
   </ItemGroup>
 </Project>

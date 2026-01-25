@@ -1,0 +1,1 @@
+docker images --filter=reference='openelection.*' -q | xargs -r docker rmi -f

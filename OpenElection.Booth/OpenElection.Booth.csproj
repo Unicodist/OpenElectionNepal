@@ -1,23 +1,38 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         
         <SpaRoot>../openelection.booth.web</SpaRoot>
-        <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
+        <SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
         <SpaProxyServerUrl>https://localhost:49494</SpaProxyServerUrl>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.8"/>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.8" />
+        <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.2.9" />
         <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="9.0.9" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\openelection.booth.web\openelection.booth.web.esproj" />
       <ProjectReference Include="..\OpenElection.Microservice\OpenElection.Microservice.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="publish\web.config" />
+      <_ContentIncludedByDefault Remove="publish\appsettings.json" />
+      <_ContentIncludedByDefault Remove="publish\OpenElection.Booth.deps.json" />
+      <_ContentIncludedByDefault Remove="publish\OpenElection.Booth.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="publish\OpenElection.Booth.staticwebassets.endpoints.json" />
     </ItemGroup>
 
 </Project>

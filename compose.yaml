@@ -1,0 +1,40 @@
+﻿services:
+  openelection.booth:
+    image: openelection.booth
+    restart: always
+    build:
+      context: .
+      dockerfile: OpenElection.Booth/Dockerfile
+    ports:
+      - "8080:8080"
+      - "5001:5001"
+      - "9110:9110"
+
+  openelection.central:
+    image: openelection.central
+    restart: always
+    build:
+      context: .
+      dockerfile: OpenElection.Central/Dockerfile
+    ports:
+      - "5002:5002"
+      - "9111:9111"
+
+  openelection.portal:
+    image: openelection.portal
+    build:
+      context: .
+      dockerfile: OpenElection.Portal/Dockerfile
+  
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: openelection
+      POSTGRES_PASSWORD: securepassword
+      POSTGRES_DB: openelectiondb
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+volumes:
+    pg-data: {}
