@@ -1,4 +1,5 @@
 import React, {createContext, useContext, useState, useCallback, useEffect} from "react";
+import {verifyCredentials} from "../services/credential-verification-service.ts";
 
 interface VerificationContextType {
     isVerified: boolean;
@@ -31,8 +32,9 @@ export function VerificationProvider({children}: { children: React.ReactNode }) 
 
     const handleOnQRCodeScanned = useCallback((qrData: string) => {
         setIsScanning(true);
-        // TODO: Implement QR code verification API call
-        console.log("QR Code scanned:", qrData);
+        verifyCredentials(qrData).then((result) => {
+            setIsVerified(result.isVerified)
+        }).finally(()=>setIsScanning(false));
     }, []);
 
     // TODO: Add 
